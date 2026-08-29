@@ -1,0 +1,11 @@
+{application, sepiasearch_filter, [
+    {description, "em_filter agent for PeerTube video search via SepiaSearch"},
+    {vsn, "0.1.0"},
+    {registered, [sepiasearch_filter_sup, sepiasearch_filter_server]},
+    {mod, {sepiasearch_filter_app, []}},
+    {applications, [kernel, stdlib, ssl, inets, cowboy, em_filter]},
+    {env, [{pop_port, 0}, {query_port, 0}, {pop_seeds, []}]},
+    {modules, [sepiasearch_filter_sup, sepiasearch_filter_server]},
+    {licenses, ["Apache-2.0"]},
+    {links, [{"GitHub", "https://github.com/EmergenceSystem/sepiasearch_filter"}]}
+]}.
